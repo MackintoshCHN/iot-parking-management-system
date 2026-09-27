@@ -1,26 +1,20 @@
 # IoT-Based Parking Management System
 
-An STM32-based IoT parking management system integrating parking space monitoring, parking guidance, fee calculation, TFT display, servo control, Bluetooth communication, and mobile app interaction.
+An STM32-based IoT parking management system integrating parking-space monitoring, parking guidance, fee calculation, TFT display, servo control, Bluetooth communication, and mobile app interaction.
 
-This project was developed as my **Bachelor of Engineering graduation project in Internet of Things Engineering in 2024**. The system integrates embedded hardware, sensors, local display, actuator control, and wireless communication into a working parking management prototype.
-
-## Prototype Overview
-
-The prototype monitors three parking spaces (A, B, and C), detects vehicle occupancy, provides parking guidance, calculates parking fees, displays parking information on a TFT screen, and synchronises status information with a mobile application.
-
-![Prototype Overview](images/prototype_overview.jpg)
+This project was developed as my **Bachelor of Engineering graduation project in Internet of Things Engineering in 2024**. The system combines embedded hardware, sensors, local display, actuator control, and wireless communication into a working parking management prototype.
 
 ## Key Features
 
 - Vehicle entry and parking-space occupancy detection
 - Monitoring of three parking spaces: A, B, and C
-- Automatic parking-space guidance based on current availability
+- Automatic parking guidance based on current space availability
 - Parking fee calculation based on parking duration
 - TFT display for parking status, fees, and guidance information
 - Servo-based gate simulation
 - Bluetooth communication with a mobile application
 - Mobile monitoring of parking-space status and parking fees
-- Remote fee-clearing and gate-control operations
+- Fee-clearing and gate-control operations through the mobile interface
 
 ## System Requirements
 
@@ -79,19 +73,19 @@ The main workflow includes:
 
 ![System Workflow](images/system_workflow.png)
 
+## Prototype Overview
+
+The prototype monitors three parking spaces (A, B, and C), detects vehicle occupancy, provides parking guidance, calculates parking fees, displays parking information on a TFT screen, and synchronises status information with a mobile application.
+
+The original prototype interface was developed in Chinese. System diagrams and documentation in this repository have been translated into English for clarity, while the original TFT and mobile app interfaces are preserved in the demonstration images.
+
+![Prototype Overview](images/prototype_overview.jpg)
+
 ## Hardware Prototype
 
 The prototype integrates an STM32-based controller with infrared detection modules, a TFT display, Bluetooth communication hardware, a servo motor, control buttons, and an audio output module.
 
 ![Hardware Overview](images/hardware_overview.jpg)
-
-## Mobile Application
-
-The mobile interface displays the occupancy state of parking spaces A, B, and C together with their corresponding parking fees.
-
-It also provides control functions for fee clearing and gate operation through the wireless connection.
-
-![Mobile Application](images/mobile_app.png)
 
 ## Parking Status Display
 
@@ -117,6 +111,14 @@ When a vehicle remains in a parking space, the embedded application tracks the p
 The mobile application displays the current fee for each parking space.
 
 ![Billing Demo](images/billing_demo.jpg)
+
+## Mobile Application
+
+The mobile interface displays the occupancy state of parking spaces A, B, and C together with their corresponding parking fees.
+
+It also provides control functions for fee clearing and gate operation through the wireless connection.
+
+![Mobile Application](images/mobile_app.png)
 
 ## Firmware
 
