@@ -1,8 +1,8 @@
 # IoT-Based Parking Management System
 
-An STM32-based IoT parking management system integrating parking-space monitoring, parking guidance, fee calculation, TFT display, servo control, Bluetooth communication, and mobile app interaction.
+An STM32-based IoT parking management system integrating parking-space monitoring, parking guidance, fee calculation, TFT display, servo control, wireless communication, and mobile application interaction.
 
-This project was developed as my **Bachelor of Engineering graduation project in Internet of Things Engineering in 2024**. The system combines embedded hardware, sensors, local display, actuator control, and wireless communication into a working parking management prototype.
+This project was developed as my **individual Bachelor of Engineering graduation project in Internet of Things Engineering from January to May 2024**. The system combines embedded hardware, sensors, local display, actuator control, and wireless communication into a working parking management prototype.
 
 ## Key Features
 
@@ -15,6 +15,21 @@ This project was developed as my **Bachelor of Engineering graduation project in
 - Bluetooth communication with a mobile application
 - Mobile monitoring of parking-space status and parking fees
 - Fee-clearing and gate-control operations through the mobile interface
+- Optional ESP8266 / Wi-Fi communication logic in the firmware
+
+## Technical Details
+
+- **Microcontroller:** STM32F103C8T6
+- **Programming Language:** Embedded C
+- **Primary Wireless Communication:** Bluetooth
+- **Optional Wireless Support:** ESP8266 / Wi-Fi logic included in the firmware
+- **Mobile Integration:** E4A-based mobile application
+- **Display:** TFT colour display
+- **Sensors:** Infrared parking-space detection modules
+- **Actuation:** Servo motor for gate simulation
+- **Audio:** Voice playback module
+
+Bluetooth was used as the primary communication method in the final prototype because it provided more stable operation during testing. ESP8266 / Wi-Fi-related logic was retained in the firmware as an optional communication path.
 
 ## System Requirements
 
@@ -30,7 +45,7 @@ The system was designed around three groups of requirements:
 
 The system uses a main controller to coordinate the parking entry/exit module, parking-space monitoring, fee management, parking lock control, and parking guidance functions.
 
-A TFT display provides local information, while Bluetooth communication connects the embedded system with the mobile application.
+A TFT display provides local information, while wireless communication connects the embedded system with the mobile application.
 
 ![System Architecture](images/system_architecture.png)
 
@@ -58,7 +73,7 @@ The overall functionality is divided into three main areas:
 
 ## System Workflow
 
-The embedded application continuously processes parking status and user input.
+The embedded application continuously processes parking status, sensor input, and user interaction.
 
 The main workflow includes:
 
@@ -77,13 +92,13 @@ The main workflow includes:
 
 The prototype monitors three parking spaces (A, B, and C), detects vehicle occupancy, provides parking guidance, calculates parking fees, displays parking information on a TFT screen, and synchronises status information with a mobile application.
 
-The original prototype interface was developed in Chinese. System diagrams and documentation in this repository have been translated into English for clarity, while the original TFT and mobile app interfaces are preserved in the demonstration images.
+The original prototype interface was developed in Chinese. System diagrams and documentation in this repository have been translated into English for clarity, while the original TFT and mobile application interfaces are preserved in the demonstration images.
 
 ![Prototype Overview](images/prototype_overview.jpg)
 
 ## Hardware Prototype
 
-The prototype integrates an STM32-based controller with infrared detection modules, a TFT display, Bluetooth communication hardware, a servo motor, control buttons, and an audio output module.
+The hardware prototype integrates an STM32F103C8T6 microcontroller with infrared detection modules, a TFT display, Bluetooth communication hardware, a servo motor, control buttons, and an audio output module.
 
 ![Hardware Overview](images/hardware_overview.jpg)
 
@@ -100,7 +115,9 @@ The TFT screen provides local parking information, including:
 
 ## Vehicle Detection Demo
 
-The following demonstration shows the system detecting a vehicle in parking space A. The mobile application updates the corresponding parking-space state while the embedded system tracks the parking status.
+The following demonstration shows the system detecting a vehicle in parking space A.
+
+The mobile application updates the corresponding parking-space state while the embedded system monitors occupancy and parking duration.
 
 ![Vehicle Detection Demo](images/vehicle_detection_demo.jpg)
 
@@ -114,9 +131,9 @@ The mobile application displays the current fee for each parking space.
 
 ## Mobile Application
 
-The mobile interface displays the occupancy state of parking spaces A, B, and C together with their corresponding parking fees.
+The embedded system interfaces with an **E4A-based mobile application through Bluetooth communication**.
 
-It also provides control functions for fee clearing and gate operation through the wireless connection.
+The mobile interface displays the occupancy state of parking spaces A, B, and C together with their corresponding parking fees. It also supports fee-clearing and gate-control operations.
 
 ![Mobile Application](images/mobile_app.png)
 
@@ -134,12 +151,13 @@ The application-level logic covers:
 - TFT initialisation and display updates
 - Parking-space sensor reading
 - Vehicle-entry detection
-- Parking fee timing and calculation
-- Parking guidance selection
+- Parking timing and fee calculation
+- Parking-guidance selection
 - Servo control
 - Voice playback triggering
 - Key input processing
-- Wireless data handling
+- Bluetooth data handling
+- Optional ESP8266 / Wi-Fi communication logic
 
 ## Repository Structure
 
@@ -165,8 +183,13 @@ iot-parking-management-system/
 
 ## Project Information
 
-- **Project:** Bachelor Graduation Project
+- **Project:** IoT-Based Parking Management System
+- **Type:** Individual Bachelor Graduation Project
+- **Period:** January 2024 – May 2024
 - **Field:** Internet of Things Engineering
-- **Year:** 2024
-- **Platform:** STM32
-- **Main Components:** STM32 controller, infrared sensors, TFT display, servo motor, Bluetooth communication, mobile application
+- **Microcontroller:** STM32F103C8T6
+- **Programming Language:** Embedded C
+- **Primary Wireless Communication:** Bluetooth
+- **Optional Wireless Support:** ESP8266 / Wi-Fi
+- **Mobile Integration:** E4A-based mobile application
+- **Main Components:** Infrared sensors, TFT display, servo motor, Bluetooth module, audio output module
