@@ -149,7 +149,6 @@ int main(void)
                 }
             }
         
-
             if(carPinC == 0) //Vehicle parked
             {
                 timeCountC++;//Start timing
